@@ -2,28 +2,27 @@ package tn.esprit.manaiamal4cce11.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
-import java.util.ArrayList;
-import java.util.List;
+import lombok.experimental.FieldDefaults;
+
+import java.util.HashSet;
+import java.util.Set;
+
+@FieldDefaults(level = AccessLevel.PRIVATE)
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "agence")
 public class Agence {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idAgence;
-    @Column(nullable = false, length = 100)
-    private String nom;
-    @Column(nullable = false, length = 100)
-    private String ville;
-    @Column(length = 255)
-    private String adresse;
-    @Column(length = 20)
-    private String telephone;
+    Long idAgence;
+    String nom;
+    String ville;
+    String adresse;
+    String telephone;
     @OneToMany(mappedBy = "agence")
-    private List<Employe> employes = new ArrayList<>();
-    @OneToMany(mappedBy = "agence")
-    private List<Vehicule> vehicules = new ArrayList<>();
+    Set <Vehicule> vehicules=new HashSet<>();
+
+
 }

@@ -2,25 +2,23 @@ package tn.esprit.manaiamal4cce11.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.FieldDefaults;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
+@FieldDefaults(level = AccessLevel.PRIVATE)
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "equipement")
 public class Equipement {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idEquipement;
-
-    @Column(nullable = false, length = 100)
-    private String libelle;
-
+     Long idEquipement;
+    String libelle;
     @ManyToMany(mappedBy = "equipements")
-    private List<Vehicule> vehicules = new ArrayList<>();
+    Set<Vehicule> vehicules=new HashSet<>();
+
 }
