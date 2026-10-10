@@ -1,9 +1,10 @@
 package tn.esprit.manaiamal4cce11.repository;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import tn.esprit.manaiamal4cce11.domain.Vehicule;
 
-public interface IVehiculeRepository extends CrudRepository<Vehicule,Long> {
+
+public interface IVehiculeRepository extends JpaRepository<Vehicule,Long> {
 
 
 }
