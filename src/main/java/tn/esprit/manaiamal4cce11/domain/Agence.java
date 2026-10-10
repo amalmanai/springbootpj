@@ -21,8 +21,11 @@ public class Agence {
     String ville;
     String adresse;
     String telephone;
-    @OneToMany(mappedBy = "agence")
-    Set <Vehicule> vehicules=new HashSet<>();
 
+    @OneToMany(mappedBy = "agence", fetch = FetchType.LAZY)
+    Set <Vehicule> vehicules = new HashSet<>();
+
+    @OneToMany(mappedBy = "agence", fetch = FetchType.LAZY)
+    Set <Employe> employes = new HashSet<>();
 
 }

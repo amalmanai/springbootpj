@@ -6,6 +6,8 @@ import lombok.experimental.FieldDefaults;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Getter
@@ -20,5 +22,9 @@ public class Contrat {
     LocalDate dateSignature;
     BigDecimal montantTotal;
     Boolean valide;
+    @OneToOne(fetch = FetchType.LAZY)
+    private Reservation reservation;
 
+    @OneToMany(mappedBy = "contrat", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    Set<Paiement> paiements = new HashSet<>();
 }

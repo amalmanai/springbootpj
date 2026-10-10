@@ -18,7 +18,7 @@ public class Equipement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
      Long idEquipement;
     String libelle;
-    @ManyToMany(mappedBy = "equipements")
-    Set<Vehicule> vehicules=new HashSet<>();
+    @ManyToMany(mappedBy = "equipements", fetch = FetchType.LAZY)
+    Set<Vehicule> vehicules = new HashSet<>();
 
 }

@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
+
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Getter
 @Setter
@@ -20,5 +23,11 @@ public class Client {
     String telephone;
     String numPermis;
     LocalDate dateInscription;
+    @OneToMany(
+            mappedBy = "client",
+            cascade = CascadeType.PERSIST,
+            fetch = FetchType.LAZY
+    )
+    Set<Reservation> reservations = new HashSet<>();
 
 }
