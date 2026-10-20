@@ -14,6 +14,7 @@ import java.util.List;
 public class VehiculeServicesImpl implements IVehiculeServices {
 
     private final IVehiculeRepository vehiculeRepository;
+
     @Override
     public Vehicule create(Vehicule vehicule) {
         return vehiculeRepository.save(vehicule);
@@ -27,16 +28,27 @@ public class VehiculeServicesImpl implements IVehiculeServices {
 
     @Override
     public void delete(Vehicule vehicule) {
-     vehiculeRepository.delete(vehicule);
+        vehiculeRepository.delete(vehicule);
     }
 
     @Override
     public Vehicule findById(long id) {
-        return vehiculeRepository.findById(id).orElseThrow(()-> new EntityNotFoundException(" vehicule not found "));
+        return vehiculeRepository.findById(id).orElseThrow(() -> new EntityNotFoundException(" vehicule not found "));
     }
 
     @Override
     public List<Vehicule> findAll() {
         return vehiculeRepository.findAll();
+    }
+
+    @Override
+    public void deleteById(Long idVehicule) {
+        vehiculeRepository.deleteById(idVehicule);
+    }
+
+    @Override
+    public Vehicule update(Long idVehicule, Vehicule vehicule) {
+
+        return vehiculeRepository.save(vehicule);
     }
 }

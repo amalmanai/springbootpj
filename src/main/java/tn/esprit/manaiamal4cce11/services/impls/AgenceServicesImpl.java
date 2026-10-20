@@ -18,12 +18,12 @@ public class AgenceServicesImpl implements IAgenceServices {
         return agenceRepository.save(agence);
     }
     @Override
-    public Agence update(Agence agence) {
+    public Agence update(Long idAgence, Agence agence) {
         return agenceRepository.save(agence);
     }
     @Override
-    public void delete(Agence agence) {
-        agenceRepository.delete(agence);
+    public void delete(Long agence) {
+        agenceRepository.deleteById(agence);
     }
     @Override
     public Agence findById(long id) {
@@ -33,4 +33,10 @@ public class AgenceServicesImpl implements IAgenceServices {
     public List<Agence> findAll() {
         return agenceRepository.findAll();
     }
+
+    @Override
+    public void deleteById(Long idAgence) {
+        agenceRepository.deleteById(idAgence);
+    }
+
 }

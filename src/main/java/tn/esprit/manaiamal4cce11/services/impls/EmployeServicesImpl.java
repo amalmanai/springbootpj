@@ -39,4 +39,12 @@ public class EmployeServicesImpl implements IEmployeServices {
     public List<Employe> findAll() {
         return employeRepository.findAll();
     }
+
+    @Override
+    public void deleteById(long idEmploye) {
+        employeRepository.deleteById(idEmploye);
+
+    }
+
+
 }

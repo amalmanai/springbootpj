@@ -12,5 +12,5 @@ public interface IMaintenanceServices {
     List<Maintenance> findAll();
 
 
-
+    void deleteById(long id);
 }

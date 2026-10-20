@@ -10,4 +10,6 @@ public interface IEmployeServices {
     void delete(Employe employe);
     Employe findById(long id);
     List<Employe> findAll();
+
+    void deleteById(long id);
 }

@@ -41,7 +41,10 @@ public class EquipmentServicesImpl implements IEquipmentServices {
         return equipementRepository.findAll();
     }
 
+    @Override
+    public void deleteById(long idEquipement) {
+        equipementRepository.deleteById(idEquipement);
 
-
+    }
 
 }

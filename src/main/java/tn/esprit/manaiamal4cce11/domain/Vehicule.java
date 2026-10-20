@@ -1,5 +1,5 @@
 package tn.esprit.manaiamal4cce11.domain;
-
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -30,7 +30,9 @@ import java.util.Set;
         StatutVehicule statut;
 
         @ManyToOne(fetch = FetchType.LAZY)
+        @JsonBackReference("agence-vehicules")
         Agence agence;
+        //@JsonIgnore
 
         @ManyToMany(fetch = FetchType.LAZY)
         Set<Equipement> equipements = new HashSet<>();

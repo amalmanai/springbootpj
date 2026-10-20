@@ -40,9 +40,10 @@ public class MaintenanceServicesImpl implements IMaintenanceServices {
         return maintenanceRepository.findAll();
     }
 
+    @Override
+    public void deleteById(long idMaintenance) {
+        maintenanceRepository.deleteById(idMaintenance);
 
-
-
-
+    }
 
 }

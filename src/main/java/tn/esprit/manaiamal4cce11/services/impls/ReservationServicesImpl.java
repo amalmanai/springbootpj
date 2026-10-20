@@ -20,6 +20,7 @@ public class ReservationServicesImpl implements IReservationServices {
 
     @Override
     public Reservation update(Reservation reservation) {
+
         return reservationRepository.save(reservation);
     }
 
@@ -37,6 +38,11 @@ public class ReservationServicesImpl implements IReservationServices {
     @Override
     public List<Reservation> findAll() {
         return reservationRepository.findAll();
+    }
+
+    @Override
+    public void deleteById(Long idReservation) {
+        reservationRepository.deleteById(idReservation);
     }
 
 }

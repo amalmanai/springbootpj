@@ -14,6 +14,7 @@ public class ClientServicesImpl implements IClientServices {
     private final IClientRepository clientRepository;
     @Override
     public Client create(Client client) {
+
         return clientRepository.save(client);
     }
     @Override
@@ -32,6 +33,12 @@ public class ClientServicesImpl implements IClientServices {
     @Override
     public List<Client> findAll() {
         return clientRepository.findAll();
+    }
+
+    @Override
+    public void deleteById(long idClient) {
+        clientRepository.deleteById(idClient);
+
     }
 
 }

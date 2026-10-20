@@ -18,7 +18,7 @@ public class ContratServicesImpl implements IContratServices {
     }
 
     @Override
-    public Contrat update(Contrat contrat) {
+    public Contrat update(Long id, Contrat contrat) {
         return contratRepository.save(contrat);
     }
 
@@ -35,5 +35,9 @@ public class ContratServicesImpl implements IContratServices {
     @Override
     public List<Contrat> findAll() {
         return contratRepository.findAll();
+    }
+
+    public void deleteById(Long idContrat) {
+       contratRepository.deleteById(idContrat);
     }
 }

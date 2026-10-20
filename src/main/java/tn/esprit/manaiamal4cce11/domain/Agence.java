@@ -1,5 +1,5 @@
 package tn.esprit.manaiamal4cce11.domain;
-
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -21,9 +21,12 @@ public class Agence {
     String ville;
     String adresse;
     String telephone;
+    //@JsonIgnore
 
     @OneToMany(mappedBy = "agence", fetch = FetchType.LAZY)
-    Set <Vehicule> vehicules = new HashSet<>();
+    @JsonManagedReference("agence-vehicules")
+    Set<Vehicule> vehicules = new HashSet<>();
+  //@JsonIgnore
 
     @OneToMany(mappedBy = "agence", fetch = FetchType.LAZY)
     Set <Employe> employes = new HashSet<>();

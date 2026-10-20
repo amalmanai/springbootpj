@@ -11,4 +11,5 @@ public interface IEquipmentServices {
     Equipement findById(long id);
     List<Equipement> findAll();
 
+    void deleteById(long id);
 }

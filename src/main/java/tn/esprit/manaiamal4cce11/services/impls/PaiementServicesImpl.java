@@ -12,35 +12,37 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PaiementServicesImpl implements IPaiementServices {
 
-    private final IPaiementRepository PaiementRepository;
+    private final IPaiementRepository paiementRepository;
 
     @Override
     public Paiement create(Paiement paiement) {
-        return PaiementRepository.save(paiement);
+        return paiementRepository.save(paiement);
     }
 
     @Override
     public Paiement update(Paiement paiement) {
-        return PaiementRepository.save(paiement);
+        return paiementRepository.save(paiement);
     }
 
     @Override
     public void delete(Paiement paiement) {
-        PaiementRepository.delete(paiement);
+      paiementRepository.delete(paiement);
 
     }
 
     @Override
     public Paiement findById(long id) {
-        return PaiementRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Paiement not found"));
+        return paiementRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Paiement not found"));
     }
 
     @Override
     public List<Paiement> findAll() {
-        return PaiementRepository.findAll();
+        return paiementRepository.findAll();
     }
 
 
-
+    public void deleteById(Long idPaiement) {
+     paiementRepository.deleteById(idPaiement);
+    }
 }
 

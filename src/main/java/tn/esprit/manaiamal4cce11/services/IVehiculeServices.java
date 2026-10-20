@@ -11,4 +11,8 @@ public interface IVehiculeServices {
    void delete(Vehicule vehicule);
    Vehicule findById(long id);
    List<Vehicule> findAll();
+
+    void deleteById(Long idVehicule);
+
+    Vehicule update(Long idVehicule, Vehicule vehicule);
 }

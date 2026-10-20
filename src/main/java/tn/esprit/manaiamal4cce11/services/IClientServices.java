@@ -10,4 +10,6 @@ public interface IClientServices {
     void delete (Client client);
     Client findById (long id);
      List<Client> findAll ();
+
+    void deleteById(long id);
 }

@@ -6,8 +6,12 @@ import java.util.List;
 
 public interface IContratServices {
     Contrat create (Contrat contrat);
-    Contrat update (Contrat contrat);
+    Contrat update (Long id, Contrat contrat);
     void delete (Contrat contrat);
     Contrat findById (long id);
     List<Contrat> findAll ();
+
+    void deleteById(Long id);
+
+
 }
