@@ -22,6 +22,7 @@ public class Client {
     String email;
     String telephone;
     String numPermis;
+    String type;
     LocalDate dateInscription;
     @OneToMany(
             mappedBy = "client",
